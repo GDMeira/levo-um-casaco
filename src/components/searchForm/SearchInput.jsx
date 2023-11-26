@@ -11,7 +11,6 @@ export default function SearchInput({ searchCitiesResult, setSearchCitiesResult,
         async function getData() {
             const geoCoding = await getGeoCoding(cityName)
             setSearchCitiesResult(geoCoding);
-            console.log(geoCoding);
         }
 
         const delayDebounceFn = setTimeout(() => {
@@ -20,10 +19,10 @@ export default function SearchInput({ searchCitiesResult, setSearchCitiesResult,
             if (cityName.length > 3) {
                 getData();
             }
-        }, 800);
+        }, 600);
 
         return () => {
-            clearTimeout(delayDebounceFn); // Limpa o timeout para evitar execução não desejada
+            clearTimeout(delayDebounceFn);
         };
     }, [cityName]);
 
