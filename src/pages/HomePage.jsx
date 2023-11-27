@@ -63,7 +63,7 @@ export function HomePage() {
                                 <CurrentDayInfo weatherInfo={weatherInfo} isFahrenheit={isFahrenheit} />
                             </TabPanel>
                             <TabPanel >
-                                <NextDaysInfo weatherInfo={weatherInfo} />
+                                <NextDaysInfo weatherInfo={weatherInfo} isFahrenheit={isFahrenheit} />
                             </TabPanel>
                         </TabPanels>
                     </Tabs>

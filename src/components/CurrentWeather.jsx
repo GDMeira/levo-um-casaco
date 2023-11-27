@@ -12,7 +12,6 @@ export default function CurrentWeather({ weatherInfo, isFahrenheit }) {
     function timestampTransform(timestamp) {
         const weekDays = ['Domingo', 'Segunda-feira', 'Terça-feira', 'Quarta-feira', 'Quinta-feira', 'Sexta-feira', 'Sábado'];
 
-        // const data = new Date(timestamp * 1000); // Multiplicando por 1000 para converter segundos para milissegundos
         const date = new Date(timestamp * 1000);
         const weekDay = weekDays[date.getDay()];
         const day = (`0${date.getDate()}`).slice(-2);
