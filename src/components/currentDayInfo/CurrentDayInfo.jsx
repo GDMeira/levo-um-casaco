@@ -4,12 +4,11 @@ import InfoCard from "./InfoCard";
 import styled from "styled-components";
 
 export default function CurrentDayInfo({ weatherInfo, isFahrenheit }) {
-    console.log(weatherInfo)
-
     return (
         <DayInfoLayout weatherInfo={weatherInfo} >
             <Flex
                 justifyContent={'space-between'}
+                w={'100%'}
             >
                 <InfoCard title={'Mínima'} value={isFahrenheit ? `${Math.round((weatherInfo.main.temp_min - 273.15) * 9 / 5 + 32)}ºF` : `${Math.round(weatherInfo.main.temp_min - 273.15)}º C`} />
                 <InfoCard title={'Máxima'} value={isFahrenheit ? `${Math.round((weatherInfo.main.temp_max - 273.15) * 9 / 5 + 32)}ºF` : `${Math.round(weatherInfo.main.temp_max - 273.15)}º C`} />

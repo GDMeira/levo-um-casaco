@@ -2,6 +2,7 @@ import { Area, AreaChart, CartesianGrid, ResponsiveContainer, Tooltip, XAxis, YA
 import useWeatherForecast from "../hooks/api/useWeatherForecast";
 import DayInfoLayout from "../layouts/DayInfoLayout";
 import { Box, Spinner } from "@chakra-ui/react";
+import styled from "styled-components";
 
 export default function NextDaysInfo({ weatherInfo, isFahrenheit }) {
     const { forecastData, forecastLoading } = useWeatherForecast(weatherInfo.coord.lat, weatherInfo.coord.lon)
@@ -50,3 +51,9 @@ export default function NextDaysInfo({ weatherInfo, isFahrenheit }) {
         </DayInfoLayout>
     )
 }
+
+const ResponsiveContainerSC = styled(ResponsiveContainer)`
+    @media(max-width: 700px) {
+        width: 100% !important;
+    }
+`
