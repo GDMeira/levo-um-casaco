@@ -1,10 +1,18 @@
 import { UserProvider } from './contexts/UserContext';
 import { HomePage } from './pages/HomePage';
-import { ChakraProvider } from '@chakra-ui/react'
+import { ChakraProvider } from '@chakra-ui/react';
+import { extendTheme } from '@chakra-ui/react';
+
+const theme = extendTheme({
+  fonts: {
+    body: 'Poppins, sans-serif',
+    heading: 'Poppins, sans-serif', 
+  },
+});
 
 function App() {
   return (
-    <ChakraProvider>
+    <ChakraProvider theme={theme}>
       <UserProvider>
         <HomePage />
       </UserProvider>

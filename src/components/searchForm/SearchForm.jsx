@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Button, Flex, Portal } from "@chakra-ui/react";
 import SearchInput from "./SearchInput";
 import Swal from "sweetalert2";
@@ -9,6 +9,23 @@ export default function SearchForm({ setWeatherInfo }) {
     const [showPortal, setShowPortal] = useState(false);
     const ref = useRef();
     const { getWeather } = useWeather();
+
+    useEffect(() => {
+        async function setWeatherData(lat, lon) {
+            const data = await getWeather(lat, lon);
+            setWeatherInfo(data);
+        }
+
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(position => {
+                const { latitude, longitude } = position.coords;
+                setWeatherData(latitude, longitude)
+            })
+        } else {
+            //get São Paulo weather info
+            setWeatherData(-23.5507, -46.6334);
+        }
+    }, [])
 
     async function handleSubmit(e, city = {}) {
         e.preventDefault();
@@ -39,7 +56,6 @@ export default function SearchForm({ setWeatherInfo }) {
     }
 
     return (<>
-        <h1>Busca cidade</h1>
         <form
             ref={ref}
             onKeyDown={e => handleKeyPress(e)}
