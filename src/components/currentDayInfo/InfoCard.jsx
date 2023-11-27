@@ -12,20 +12,20 @@ export default function InfoCard({ title, value }) {
             pl={5}
             justifyContent={'center'}
         >
-            <Text
+            <TitleSC
                 fontSize={'22px'}
                 fontWeight={700}
                 color={'#fff'}
             >
                 {title}
-            </Text>
-            <Text
+            </TitleSC>
+            <ValueSC
                 fontSize={'48px'}
                 fontWeight={700}
                 color={'#fff'}
             >
                 {value}
-            </Text>
+            </ValueSC>
         </FlexSC>
     )
 }
@@ -33,5 +33,22 @@ export default function InfoCard({ title, value }) {
 const FlexSC = styled(Flex)`
     @media(max-width: 1450px){
         max-height: 130px;
-    }
+    };
+
+    @media(max-width: 700px){
+        width: 40dvw !important;
+
+    };
+`;
+
+const TitleSC = styled(Text)`
+    @media(max-width: 700px){
+        font-size: 18px !important;
+    };
+`;
+
+const ValueSC = styled(Text)`
+    @media(max-width: 700px){
+        font-size: 30px !important;
+    };
 `;

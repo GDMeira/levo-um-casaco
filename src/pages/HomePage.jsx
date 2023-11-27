@@ -105,4 +105,8 @@ const TextSC = styled(Text)`
 const TabSC = styled(Tab)`
     color: #C8C8C8;
     font-size: 48px !important;
+
+    @media(max-width: 700px){
+        font-size: 24px !important;
+    }
 `;

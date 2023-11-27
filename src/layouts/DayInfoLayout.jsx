@@ -29,5 +29,8 @@ export default function DayInfoLayout({ children, weatherInfo }) {
 const TextSC = styled(Text)`
     @media(max-width: 1450px){
         font-size: 100px !important;
+    };
+    @media(max-width: 700px){
+        font-size: 80px !important;
     }
 `
