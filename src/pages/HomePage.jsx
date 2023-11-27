@@ -5,7 +5,7 @@ import { Flex, Link, Tab, TabIndicator, TabList, TabPanel, TabPanels, Tabs, Text
 import Logo from "../components/Logo";
 import CurrentWeather from "../components/CurrentWeather";
 import Switches from "../components/Switches";
-import CurrentDayInfo from "../components/CurrentDayInfo";
+import CurrentDayInfo from "../components/currentDayInfo/CurrentDayInfo";
 import NextDaysInfo from "../components/NextDaysInfo";
 
 export function HomePage() {
@@ -39,9 +39,7 @@ export function HomePage() {
                 w={'63%'} h={'100%'}
                 alignItems={'center'}
                 justifyContent={'space-between'}
-                pt={5}
-                pb={5}
-                pl={10}
+                p={'15px 20px'}
                 bgColor={'#EFEFEF'}
             >
                 {weatherInfo && (
@@ -62,7 +60,7 @@ export function HomePage() {
                         />
                         <TabPanels >
                             <TabPanel >
-                                <CurrentDayInfo weatherInfo={weatherInfo} />
+                                <CurrentDayInfo weatherInfo={weatherInfo} isFahrenheit={isFahrenheit} />
                             </TabPanel>
                             <TabPanel >
                                 <NextDaysInfo weatherInfo={weatherInfo} />
@@ -87,12 +85,14 @@ const Container = styled.div`
 
     @media(max-width: 700px) {
         flex-direction: column;
+        justify-content: flex-start;
     }
 `
 
 const FlexSC = styled(Flex)`
     @media(max-width: 700px){
         width: 100dvw !important;
+        gap: 10;
     }
 `;
 

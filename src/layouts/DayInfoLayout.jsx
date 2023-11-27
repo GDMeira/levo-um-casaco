@@ -2,14 +2,12 @@ import { Box, Flex, Text } from "@chakra-ui/react";
 import styled from "styled-components";
 
 export default function DayInfoLayout({ children, weatherInfo }) {
-    console.log(weatherInfo)
-
     return (
         <Flex
             direction={'column'}
-            justifyContent={'space-between'}
-            alignItems={'self-start'}
-            mt={8}
+            justifyContent={'flex-start'}
+            mt={10}
+            gap={10}
             minHeight={'500px'}
         >
             <Box>
