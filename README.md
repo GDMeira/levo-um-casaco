@@ -1,15 +1,15 @@
-# name
+# Weather SPA
 
-short app description
+A web application to view the weather in cities across the globe.
 
 ## About
 
-large description
-[deploy link]()
+The Weather SPA is an application where users can search for any city in the world to check the current weather or view a graphical representation of the weather in that city for the next 5 days. This helps users determine if they need to bring a jacket when visiting the city.
+[Weather SPA App Link](https://levo-um-casaco.vercel.app/)
 
 ## Technologies
 
-React, Vite, TS.
+Built with React, Vite, Rechart, and Chakra UI.
 
 ## How to run for development
 

@@ -1,8 +1,10 @@
-import { Flex } from "@chakra-ui/react";
+import { Flex, Text } from "@chakra-ui/react";
 import DayInfoLayout from "../../layouts/DayInfoLayout";
 import InfoCard from "./InfoCard";
+import styled from "styled-components";
 
 export default function CurrentDayInfo({ weatherInfo, isFahrenheit }) {
+    console.log(weatherInfo)
 
     return (
         <DayInfoLayout weatherInfo={weatherInfo} >
@@ -18,6 +20,16 @@ export default function CurrentDayInfo({ weatherInfo, isFahrenheit }) {
                 <InfoCard title={'Umidade'} value={`${weatherInfo.main.humidity}%`} />
                 <InfoCard title={'Velocidade do vento'} value={isFahrenheit ? `${Math.round(weatherInfo.wind.speed * 2.23694)} mi/h` : `${Math.round(weatherInfo.wind.speed)} m/s`} />
             </Flex>
+
+            <TextSC fontSize={'24px'} color={'#AFADAD'}>
+                {weatherInfo.main.temp > 290.15 ? 'Não, você não deve levar um casaquinho!' : 'Sim, você deve levar um casaquinho!'}
+            </TextSC>
         </DayInfoLayout>
     )
 }
+
+const TextSC = styled(Text)`
+    @media(max-width: 700px){
+        font-size: 18px !important;
+    };
+`;

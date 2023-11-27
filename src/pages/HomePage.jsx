@@ -44,7 +44,7 @@ export function HomePage() {
             >
                 {weatherInfo && (
                     <Tabs
-                        position="relative"
+                        
                         variant="unstyled"
                         alignSelf={'flex-start'}
                     >
@@ -92,7 +92,9 @@ const Container = styled.div`
 const FlexSC = styled(Flex)`
     @media(max-width: 700px){
         width: 100dvw !important;
-        gap: 10;
+        padding: 0 !important;
+        padding-top: 10px !important;
+        height: auto !important;
     }
 `;
 
