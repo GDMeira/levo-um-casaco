@@ -31,7 +31,7 @@ export default function NextDaysInfo({ weatherInfo, isFahrenheit }) {
             {forecastLoading ? (
                 <Spinner />
             ) : (
-                <ResponsiveContainer width={'100%'} height={'60%'} minWidth={0} minHeight={300}>
+                <ResponsiveContainer width={'100%'} height={'60%'} minWidth={350} minHeight={300}>
                     <AreaChart data={getData()}
                         margin={{ top: 10, right: 30, left: 0, bottom: 0 }}>
                         <defs>
