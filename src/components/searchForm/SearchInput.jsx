@@ -31,13 +31,13 @@ export default function SearchInput({ searchCitiesResult, setSearchCitiesResult,
     }
 
     return (
-        <InputGroup h={'7dvh'} boxShadow={'0px 24px 48px 0px #314F7C14'}>
-            <InputLeftElement pointerEvents='none' h={'7dvh'}>
-                <CiSearch color='gray.300' size={20}/>
+        <InputGroup h={'8dvh'} boxShadow={'0px 24px 48px 0px #314F7C14'}>
+            <InputLeftElement pointerEvents='none' h={'8dvh'} >
+                <CiSearch color='gray.300' size={20} />
             </InputLeftElement>
             <Input
             bgColor={'#EDEDEF'}
-                h={'7dvh'}
+                h={'8dvh'} minW={'30dvw'}
                 borderRadius={'20px'}
                 type="text"
                 placeholder="procure por uma cidade"

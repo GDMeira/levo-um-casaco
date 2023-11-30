@@ -5,7 +5,7 @@ import styled from "styled-components";
 export default function Logo() {
 
     return (
-        <Flex justifyContent={'space-around'} alignItems={'center'}>
+        <Flex justifyContent={'space-around'} alignItems={'center'} mt={5}>
             <ImgSC src={casaco} alt="Casaco de frio" w={'120px'} />
             <Box>
                 <TextSC fontWeight={600} fontSize={'62px'} lineHeight={1}>

@@ -51,9 +51,3 @@ export default function NextDaysInfo({ weatherInfo, isFahrenheit }) {
         </DayInfoLayout>
     )
 }
-
-const ResponsiveContainerSC = styled(ResponsiveContainer)`
-    @media(max-width: 700px) {
-        width: 100% !important;
-    }
-`

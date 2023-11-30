@@ -3,12 +3,14 @@ import styled from "styled-components";
 
 export default function DayInfoLayout({ children, weatherInfo }) {
     return (
-        <Flex
+        <FlexSC
             direction={'column'}
             justifyContent={'flex-start'}
-            mt={10}
+            mt={5}
             gap={10}
             minHeight={'500px'}
+            minW={'60dvw'}
+            maxW={'62dvw'}
         >
             <Box>
                 <TextSC fontSize={'150px'} lineHeight={1}>
@@ -22,15 +24,24 @@ export default function DayInfoLayout({ children, weatherInfo }) {
             {children}
 
 
-        </Flex>
+        </FlexSC>
     )
 }
 
 const TextSC = styled(Text)`
+    max-height: 33dvh;
+    overflow: hidden;
+
     @media(max-width: 1450px){
-        font-size: 100px !important;
+        font-size: 90px !important;
     };
     @media(max-width: 700px){
-        font-size: 80px !important;
+        font-size: 70px !important;
+    }
+`
+
+const FlexSC = styled(Flex)`
+    @media(max-width: 700px){
+        max-width: 100dvw !important;
     }
 `

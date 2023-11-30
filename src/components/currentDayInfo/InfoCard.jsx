@@ -5,7 +5,7 @@ export default function InfoCard({ title, value }) {
     return (
         <FlexSC
             w={'25dvw'}
-            h={'180px'}
+            h={'155px'}
             borderRadius={'32px'}
             bg={'linear-gradient(117.33deg, #4D4494 22.83%, #4F43AE 90.03%)'}
             direction={'column'}

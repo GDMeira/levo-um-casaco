@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import SearchForm from "../components/searchForm/SearchForm";
 import { useState } from "react";
-import { Flex, Link, Tab, TabIndicator, TabList, TabPanel, TabPanels, Tabs, Text } from "@chakra-ui/react";
+import { Flex, Link, Spacer, Tab, TabIndicator, TabList, TabPanel, TabPanels, Tabs, Text } from "@chakra-ui/react";
 import Logo from "../components/Logo";
 import CurrentWeather from "../components/CurrentWeather";
 import Switches from "../components/Switches";
@@ -17,38 +17,38 @@ export function HomePage() {
             <FlexSC
                 direction={'column'}
                 w={'37%'}
-                h={'100%'}
-                gap={5}
+                minH={'100%'}
+                
                 alignItems={'center'}
-                justifyContent={'space-between'}
-                pt={5}
-                pb={5}
+                justifyContent={'flex-start'}
             >
                 <Logo />
+                <Spacer/>
                 <SearchForm setWeatherInfo={setWeatherInfo} />
+                <Spacer/>
                 <CurrentWeather weatherInfo={weatherInfo} isFahrenheit={isFahrenheit} />
+                <Spacer/>
                 <Switches isFahrenheit={isFahrenheit} setIsFahrenheit={setIsFahrenheit} />
-
-                <TextSC fontSize={'24px'} >
+                <Spacer/>
+                <TextSC fontSize={'24px'} mb={5}>
                     Todos os direitos reservados. 2023.
                 </TextSC>
             </FlexSC>
 
             <FlexSC
                 direction={'column'}
-                w={'63%'} h={'100%'}
+                 pl={5}
                 alignItems={'center'}
-                justifyContent={'space-between'}
-                p={'15px 20px'}
+                justifyContent={'flex-start'}
                 bgColor={'#EFEFEF'}
             >
                 {weatherInfo && (
                     <Tabs
-                        
+                        mt={5} 
                         variant="unstyled"
                         alignSelf={'flex-start'}
                     >
-                        <TabList >
+                        <TabList maxW={'100dvw'}>
                             <TabSC _selected={{ color: 'black' }}>Hoje</TabSC>
                             <TabSC _selected={{ color: 'black' }}>Próximos dias</TabSC>
                         </TabList>
@@ -68,7 +68,10 @@ export function HomePage() {
                         </TabPanels>
                     </Tabs>
                 )}
-                <TextSC fontSize={'24px'}>
+
+                <Spacer/>
+
+                <TextSC fontSize={'24px'} mb={5}>
                     Dados fornecidos pela <Link color={'#4F43AE'} href="https://openweathermap.org/">Open Weather API</Link>
                 </TextSC>
             </FlexSC>
@@ -79,8 +82,7 @@ export function HomePage() {
 const Container = styled.div`
     display: flex;
     justify-content: center;
-    align-items: center;
-    height: 100dvh;
+    min-height: 100dvh;
     width: 100dvw;
 
     @media(max-width: 700px) {
@@ -93,8 +95,8 @@ const FlexSC = styled(Flex)`
     @media(max-width: 700px){
         width: 100dvw !important;
         padding: 0 !important;
-        padding-top: 10px !important;
         height: auto !important;
+        gap: 10px !important;
     }
 `;
 
