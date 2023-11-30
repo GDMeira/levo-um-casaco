@@ -19,12 +19,13 @@ export default function SearchForm({ setWeatherInfo }) {
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(position => {
                 const { latitude, longitude } = position.coords;
-                setWeatherData(latitude, longitude)
+                setWeatherData(latitude, longitude);
+                
+                return;
             })
-        } else {
-            //get São Paulo weather info
+            
             setWeatherData(-23.5507, -46.6334);
-        }
+        } 
     }, [])
 
     async function handleSubmit(e, city = {}) {

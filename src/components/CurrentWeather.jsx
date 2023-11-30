@@ -3,14 +3,11 @@ import { useEffect, useState } from "react";
 import styled from "styled-components";
 
 export default function CurrentWeather({ weatherInfo, isFahrenheit }) {
-    //TODO: adaptar cor da temperatura pelo clima
     const [degree, setDegree] = useState(undefined);
 
     useEffect(() => {
         setDegree(isFahrenheit ? 'ºF' : 'ºC');
     }, [isFahrenheit]);
-
-    weatherInfo &&console.log(weatherInfo)
 
     function getColor() {
         switch (weatherInfo.weather[0].icon) {
