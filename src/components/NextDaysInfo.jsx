@@ -43,7 +43,7 @@ export default function NextDaysInfo({ weatherInfo, isFahrenheit }) {
                         <XAxis dataKey="date" />
                         <YAxis unit={isFahrenheit ? 'ºF' : 'ºC'} />
                         <CartesianGrid strokeDasharray="3 3" />
-                        <Tooltip />
+                        <Tooltip formatter={(value, name, item) => `${value} ${isFahrenheit ? 'ºF' : 'ºC'}`}/>
                         <Area type="monotone" dataKey="temp" stroke="#8884d8" fillOpacity={1} fill="url(#colorUv)" />
                     </AreaChart>
                 </ResponsiveContainer>
