@@ -35,12 +35,18 @@ const TextSC = styled(Text)`
     @media(max-width: 1450px){
         font-size: 90px !important;
     };
+    @media(max-width: 1100px){
+        font-size: 80px !important;
+    };
     @media(max-width: 700px){
-        font-size: 70px !important;
+        font-size: 60px !important;
     }
 `
 
 const FlexSC = styled(Flex)`
+    @media(max-width: 1100px){
+        min-width: 50dvw !important;
+    };
     @media(max-width: 700px){
         max-width: 100dvw !important;
     }

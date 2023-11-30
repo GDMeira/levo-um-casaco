@@ -18,18 +18,26 @@ export function HomePage() {
                 direction={'column'}
                 w={'37%'}
                 minH={'100%'}
-                
+
                 alignItems={'center'}
                 justifyContent={'flex-start'}
             >
                 <Logo />
-                <Spacer/>
+
+                <Spacer />
+
                 <SearchForm setWeatherInfo={setWeatherInfo} />
-                <Spacer/>
+
+                <Spacer />
+
                 <CurrentWeather weatherInfo={weatherInfo} isFahrenheit={isFahrenheit} />
-                <Spacer/>
+
+                <Spacer />
+
                 <Switches isFahrenheit={isFahrenheit} setIsFahrenheit={setIsFahrenheit} />
-                <Spacer/>
+
+                <Spacer />
+
                 <TextSC fontSize={'24px'} mb={5}>
                     Todos os direitos reservados. 2023.
                 </TextSC>
@@ -37,14 +45,14 @@ export function HomePage() {
 
             <FlexSC
                 direction={'column'}
-                 pl={5}
+                pl={5} minW={'63%'}
                 alignItems={'center'}
                 justifyContent={'flex-start'}
                 bgColor={'#EFEFEF'}
             >
                 {weatherInfo && (
                     <Tabs
-                        mt={5} 
+                        mt={5}
                         variant="unstyled"
                         alignSelf={'flex-start'}
                     >
@@ -69,7 +77,7 @@ export function HomePage() {
                     </Tabs>
                 )}
 
-                <Spacer/>
+                <Spacer />
 
                 <TextSC fontSize={'24px'} mb={5}>
                     Dados fornecidos pela <Link color={'#4F43AE'} href="https://openweathermap.org/">Open Weather API</Link>
@@ -92,6 +100,9 @@ const Container = styled.div`
 `
 
 const FlexSC = styled(Flex)`
+    @media(max-width: 1100px){
+        padding: 0 !important;
+    };
     @media(max-width: 700px){
         width: 100dvw !important;
         padding: 0 !important;
@@ -110,6 +121,9 @@ const TabSC = styled(Tab)`
     color: #C8C8C8;
     font-size: 48px !important;
 
+    @media(max-width: 1100px){
+        font-size: 32px !important;
+    };
     @media(max-width: 700px){
         font-size: 24px !important;
     }

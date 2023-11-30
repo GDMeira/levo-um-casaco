@@ -76,9 +76,9 @@ export default function CurrentWeather({ weatherInfo, isFahrenheit }) {
                     </DegreeSC>
                 </Flex>
 
-                <Text fontSize={'32px'} fontWeight={400}>
+                <ClimateSC fontSize={'32px'} fontWeight={400}>
                     {weatherInfo.weather[0].description}
-                </Text>
+                </ClimateSC>
 
                 <Divider w={'70%'} border={'3px solid #EDEDED'} mt={5} mb={8} />
 
@@ -96,16 +96,45 @@ const ImgSC = styled(Image)`
         width: 100px !important;
         height: 100px !important;
     }
+    @media(max-width: 1100px){
+        width: 80px !important;
+        height: 80px !important;
+    }
+    @media(max-width: 700px){
+        width: 100px !important;
+        height: 100px !important;
+    }
 `;
 
 const TextSC = styled(Text)`
     @media(max-width: 1450px){
         font-size: 110px !important;
     }
+    @media(max-width: 1100px){
+        font-size: 80px !important;
+    }
+    @media(max-width: 700px){
+        font-size: 110px !important;
+    };
+`
+
+const ClimateSC = styled(Text)`
+    @media(max-width: 1450px){
+        font-size: 30px !important;
+    }
+    @media(max-width: 1100px){
+        font-size: 24px !important;
+    }
+    @media(max-width: 700px){
+        font-size: 30px !important;
+    };
 `
 
 const DegreeSC = styled(Text)`
     @media(max-width: 1450px){
-        font-size: 90px !important;
+        font-size: 60px !important;
     }
+    @media(max-width: 700px){
+        font-size: 80px !important;
+    };
 `

@@ -23,10 +23,22 @@ const ImgSC = styled(Image)`
     @media(max-width: 1450px){
         width: 90px !important;
     }
+    @media(max-width: 1100px){
+        width: 50px !important;
+    }
+    @media(max-width: 700px){
+        width: 90px !important;
+    }
 `;
 
 const TextSC = styled(Text)`
     @media(max-width: 1450px){
+        font-size: 40px !important;
+    }
+    @media(max-width: 1100px){
+        font-size: 30px !important;
+    }
+    @media(max-width: 700px){
         font-size: 40px !important;
     }
 `
